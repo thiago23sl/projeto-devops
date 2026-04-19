@@ -1,11 +1,11 @@
-name: CI
+name: CD
 
 on:
   push:
   pull_request:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,8 +15,11 @@ jobs:
       - name: Instalar GCC
         run: sudo apt update && sudo apt install gcc -y
 
-      - name: Compilar projeto
+      - name: Compilar binário
         run: gcc main.c -o biblioteca
 
-      - name: Testar compilação
-        run: ls -la
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: programa-biblioteca
+          path: biblioteca
