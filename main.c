@@ -16,6 +16,14 @@ void cadastrarLivro() {
     printf("Livro cadastrado!\n");
 }
 
+void listarLivros() {
+    printf("\n=== LISTA DE LIVROS ===\n");
+
+    for (int i = 0; i < total; i++) {
+        printf("%d - %s\n", i + 1, livros[i]);
+    }
+}
+
 int main() {
     int op;
 
@@ -32,6 +40,9 @@ int main() {
         switch(op) {
             case 1:
                 cadastrarLivro();
+                break;
+            case 2:
+                listarLivros();
                 break;
             case 5:
                 printf("Saindo...\n");
