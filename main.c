@@ -24,6 +24,24 @@ void listarLivros() {
     }
 }
 
+void buscarLivro() {
+    char busca[TAM];
+
+    getchar();
+    printf("Digite o nome do livro: ");
+    fgets(busca, TAM, stdin);
+    busca[strcspn(busca, "\n")] = '\0';
+
+    for (int i = 0; i < total; i++) {
+        if (strcmp(busca, livros[i]) == 0) {
+            printf("Livro encontrado!\n");
+            return;
+        }
+    }
+
+    printf("Livro nao encontrado.\n");
+}
+
 int main() {
     int op;
 
@@ -43,6 +61,9 @@ int main() {
                 break;
             case 2:
                 listarLivros();
+                break;
+            case 3:
+                buscarLivro();
                 break;
             case 5:
                 printf("Saindo...\n");
