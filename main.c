@@ -42,6 +42,26 @@ void buscarLivro() {
     printf("Livro nao encontrado.\n");
 }
 
+void removerLivro() {
+    int num;
+
+    listarLivros();
+
+    printf("Digite o numero para remover: ");
+    scanf("%d", &num);
+
+    if (num >= 1 && num <= total) {
+        for (int i = num - 1; i < total - 1; i++) {
+            strcpy(livros[i], livros[i + 1]);
+        }
+
+        total--;
+        printf("Livro removido!\n");
+    } else {
+        printf("Numero invalido.\n");
+    }
+}
+
 int main() {
     int op;
 
@@ -65,11 +85,14 @@ int main() {
             case 3:
                 buscarLivro();
                 break;
+            case 4:
+                removerLivro();
+                break;
             case 5:
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Funcao em desenvolvimento.\n");
+                printf("Opcao invalida.\n");
         }
 
     } while(op != 5);
