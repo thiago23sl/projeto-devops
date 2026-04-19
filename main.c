@@ -1,4 +1,20 @@
 #include <stdio.h>
+#include <string.h>
+
+#define MAX 100
+#define TAM 100
+
+char livros[MAX][TAM];
+int total = 0;
+
+void cadastrarLivro() {
+    getchar();
+    printf("Digite o nome do livro: ");
+    fgets(livros[total], TAM, stdin);
+    livros[total][strcspn(livros[total], "\n")] = '\0';
+    total++;
+    printf("Livro cadastrado!\n");
+}
 
 int main() {
     int op;
@@ -15,22 +31,13 @@ int main() {
 
         switch(op) {
             case 1:
-                printf("Funcao em desenvolvimento.\n");
-                break;
-            case 2:
-                printf("Funcao em desenvolvimento.\n");
-                break;
-            case 3:
-                printf("Funcao em desenvolvimento.\n");
-                break;
-            case 4:
-                printf("Funcao em desenvolvimento.\n");
+                cadastrarLivro();
                 break;
             case 5:
                 printf("Saindo...\n");
                 break;
             default:
-                printf("Opcao invalida.\n");
+                printf("Funcao em desenvolvimento.\n");
         }
 
     } while(op != 5);
