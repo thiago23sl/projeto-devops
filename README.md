@@ -7,3 +7,5 @@ Sistema simples de biblioteca feito em linguagem C.
 - Listar livros
 - Buscar livros
 - Remover livros
+
+Projeto utilizando GitHub Flow e CI/CD.
