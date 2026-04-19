@@ -1,14 +1,16 @@
-# Sistema Biblioteca C
+# Projeto DevOps em C
 
-Projeto em C++ para gerenciamento simples de livros.
+Sistema simples de biblioteca feito em linguagem C.
 
-## Funções:
+## Funcionalidades
 - Cadastrar livros
 - Listar livros
 - Buscar livros
 - Remover livros
 
-## Tecnologias:
-- C
-- Git
-- GitHub
+## Docker
+
+Executar:
+
+docker build -t biblioteca .
+docker run -it biblioteca

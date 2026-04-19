@@ -2,7 +2,7 @@ FROM gcc:latest
 
 WORKDIR /app
 
-COPY . .
+COPY main.c .
 
 RUN gcc main.c -o biblioteca
 
