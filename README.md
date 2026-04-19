@@ -10,4 +10,4 @@ Sistema simples de biblioteca feito em linguagem C.
 
 Projeto utilizando GitHub Flow e CI/CD.
 
-## Validação final do pipeline CI/CD
+## Validação final do pipeline CI/CD.
