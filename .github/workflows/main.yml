@@ -18,6 +18,12 @@ jobs:
       - name: Compilar projeto
         run: gcc main.c -o biblioteca
 
+      - name: Compilar testes
+        run: gcc test.c -o test
+
+      - name: Rodar testes
+        run: ./test
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
