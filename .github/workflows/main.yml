@@ -20,7 +20,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build   # 🔥 ISSO LIGA OS DOIS
+    needs: build
 
     steps:
       - name: Baixar código
@@ -34,3 +34,10 @@ jobs:
         with:
           name: programa-biblioteca
           path: biblioteca
+
+      - name: Enviar alerta para Discord
+        if: always()
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"🚀 Pipeline executado!\nStatus: ${{ job.status }}\nRepo: ${{ github.repository }}\nBranch: ${{ github.ref_name }}\"}" \
+          ${{ secrets.DISCORD_WEBHOOK }}
